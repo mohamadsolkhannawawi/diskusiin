@@ -7,7 +7,7 @@ import EmptyState from "./EmptyState";
 describe("EmptyState component", () => {
   it("should render title correctly", () => {
     render(<EmptyState title="Nothing here" />);
-    expect(screen.getByText("Teks Yang Salah")).toBeInTheDocument();
+    expect(screen.getByText("Nothing here")).toBeInTheDocument();
   });
 
   it("should render description correctly when provided", () => {

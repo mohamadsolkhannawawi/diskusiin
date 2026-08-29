@@ -13,7 +13,7 @@ describe('asyncLoginUser thunk', () => {
     api.login = api._login;
     api.putAccessToken = api._putAccessToken;
     api.getOwnProfile = api._getOwnProfile;
-    
+
     delete api._login;
     delete api._putAccessToken;
     delete api._getOwnProfile;
@@ -29,10 +29,10 @@ describe('asyncLoginUser thunk', () => {
 
     const dispatch = vi.fn();
     const getState = vi.fn();
-    
+
     // Call the thunk action creator to get the thunk function
     const thunk = asyncLoginUser({email: 'test@test.com', password: 'password'});
-    
+
     // Execute the thunk function
     await thunk(dispatch, getState, undefined);
 

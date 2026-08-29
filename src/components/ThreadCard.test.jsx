@@ -6,7 +6,6 @@ import ThreadCard from './ThreadCard';
 import {useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {voteThread} from '../states/threads/threadsSlice';
-import {showAlert} from '../states/shared/alertSlice';
 
 vi.mock('react-router-dom', () => ({
   useNavigate: vi.fn(),
@@ -19,10 +18,6 @@ vi.mock('react-redux', () => ({
 
 vi.mock('../states/threads/threadsSlice', () => ({
   voteThread: vi.fn(),
-}));
-
-vi.mock('../states/shared/alertSlice', () => ({
-  showAlert: vi.fn(),
 }));
 
 describe('ThreadCard component', () => {
@@ -74,8 +69,8 @@ describe('ThreadCard component', () => {
 
     render(<ThreadCard thread={mockThread} />);
     const buttons = screen.getAllByRole('button');
-    const upvoteButton = buttons[1]; 
-    
+    const upvoteButton = buttons[1];
+
     expect(upvoteButton).toBeDisabled();
   });
 
@@ -83,10 +78,10 @@ describe('ThreadCard component', () => {
     useSelector.mockReturnValue({id: 'user-1'});
 
     render(<ThreadCard thread={mockThread} />);
-    
+
     const buttons = screen.getAllByRole('button');
     const upvoteButton = buttons[1];
-    
+
     fireEvent.click(upvoteButton);
     expect(voteThread).toHaveBeenCalledWith('thread-1', 'up');
     expect(mockDispatch).toHaveBeenCalled();

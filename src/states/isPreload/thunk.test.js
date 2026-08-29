@@ -13,7 +13,7 @@ describe('asyncPreloadAuthUser thunk', () => {
     api.getAccessToken = api._getAccessToken;
     api.getOwnProfile = api._getOwnProfile;
     api.removeAccessToken = api._removeAccessToken;
-    
+
     delete api._getAccessToken;
     delete api._getOwnProfile;
     delete api._removeAccessToken;
@@ -24,7 +24,7 @@ describe('asyncPreloadAuthUser thunk', () => {
 
     const dispatch = vi.fn();
     const getState = vi.fn();
-    
+
     const thunk = asyncPreloadAuthUser();
     await thunk(dispatch, getState, undefined);
 
@@ -43,7 +43,7 @@ describe('asyncPreloadAuthUser thunk', () => {
 
     const dispatch = vi.fn();
     const getState = vi.fn();
-    
+
     const thunk = asyncPreloadAuthUser();
     await thunk(dispatch, getState, undefined);
 
@@ -61,7 +61,7 @@ describe('asyncPreloadAuthUser thunk', () => {
 
     const dispatch = vi.fn();
     const getState = vi.fn();
-    
+
     const thunk = asyncPreloadAuthUser();
     await thunk(dispatch, getState, undefined);
 

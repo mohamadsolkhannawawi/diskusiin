@@ -19,7 +19,7 @@ describe('threadDetail thunks', () => {
 
       const dispatch = vi.fn();
       const getState = vi.fn();
-      
+
       const thunk = asyncFetchThreadDetail('thread-1');
       await thunk(dispatch, getState, undefined);
 
@@ -35,7 +35,7 @@ describe('threadDetail thunks', () => {
 
       const dispatch = vi.fn();
       const getState = vi.fn();
-      
+
       const thunk = asyncFetchThreadDetail('thread-1');
       await thunk(dispatch, getState, undefined);
 
@@ -60,7 +60,7 @@ describe('threadDetail thunks', () => {
       thunk(dispatch, getState);
 
       expect(dispatch).toHaveBeenCalledWith(
-        expect.objectContaining({type: 'threadDetail/optimisticVoteThreadDetail'})
+        expect.objectContaining({type: 'threadDetail/optimisticVoteThreadDetail'}),
       );
       expect(dispatch).toHaveBeenCalledWith(expect.any(Function));
     });

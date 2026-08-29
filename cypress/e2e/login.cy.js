@@ -27,7 +27,7 @@ describe('Login spec', () => {
     cy.wait('@loginRequest');
 
     // Verify that the custom alert toast shows the error message
-    cy.get('.alert-toast').should('be.visible').and('contain', 'email or password is wrong');
+    cy.get('.alert-toast').should('be.visible').and('contain', 'Email atau kata sandi salah.');
   });
 
   it('should redirect to home page and show user info when login success', () => {

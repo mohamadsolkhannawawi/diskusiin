@@ -11,7 +11,7 @@ describe('threads thunks', () => {
   afterEach(() => {
     api.getAllThreads = api._getAllThreads;
     api.upVoteThread = api._upVoteThread;
-    
+
     delete api._getAllThreads;
     delete api._upVoteThread;
   });
@@ -23,7 +23,7 @@ describe('threads thunks', () => {
 
       const dispatch = vi.fn();
       const getState = vi.fn();
-      
+
       const thunk = asyncFetchThreads();
       await thunk(dispatch, getState, undefined);
 
@@ -39,7 +39,7 @@ describe('threads thunks', () => {
 
       const dispatch = vi.fn();
       const getState = vi.fn();
-      
+
       const thunk = asyncFetchThreads();
       await thunk(dispatch, getState, undefined);
 
@@ -64,7 +64,7 @@ describe('threads thunks', () => {
       thunk(dispatch, getState);
 
       expect(dispatch).toHaveBeenCalledWith(
-        expect.objectContaining({type: 'threads/optimisticVoteThread'})
+        expect.objectContaining({type: 'threads/optimisticVoteThread'}),
       );
       // asyncToggleVoteThread is an async thunk, dispatching it will invoke it
       // So we expect dispatch to have been called with a function (the thunk)

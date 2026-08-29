@@ -9,15 +9,15 @@ describe('CategoryFilterBar component', () => {
 
   it('should render all categories including "Semua"', () => {
     render(
-      <CategoryFilterBar 
-        categories={categories} 
-        active="all" 
-        onSelect={() => {}} 
-      />
+      <CategoryFilterBar
+        categories={categories}
+        active="all"
+        onSelect={() => {}}
+      />,
     );
 
     expect(screen.getByText('Semua')).toBeInTheDocument();
-    categories.forEach(category => {
+    categories.forEach((category) => {
       expect(screen.getByText(category)).toBeInTheDocument();
     });
   });
@@ -25,11 +25,11 @@ describe('CategoryFilterBar component', () => {
   it('should call onSelect with "all" when "Semua" button is clicked', () => {
     const onSelectMock = vi.fn();
     render(
-      <CategoryFilterBar 
-        categories={categories} 
-        active="react" 
-        onSelect={onSelectMock} 
-      />
+      <CategoryFilterBar
+        categories={categories}
+        active="react"
+        onSelect={onSelectMock}
+      />,
     );
 
     const semuaButton = screen.getByText('Semua');
@@ -41,11 +41,11 @@ describe('CategoryFilterBar component', () => {
   it('should call onSelect with the correct category when a category button is clicked', () => {
     const onSelectMock = vi.fn();
     render(
-      <CategoryFilterBar 
-        categories={categories} 
-        active="all" 
-        onSelect={onSelectMock} 
-      />
+      <CategoryFilterBar
+        categories={categories}
+        active="all"
+        onSelect={onSelectMock}
+      />,
     );
 
     const reactButton = screen.getByText('react');
@@ -56,11 +56,11 @@ describe('CategoryFilterBar component', () => {
 
   it('should apply "is-active" class to the active category', () => {
     render(
-      <CategoryFilterBar 
-        categories={categories} 
-        active="redux" 
-        onSelect={() => {}} 
-      />
+      <CategoryFilterBar
+        categories={categories}
+        active="redux"
+        onSelect={() => {}}
+      />,
     );
 
     const reduxButton = screen.getByText('redux');

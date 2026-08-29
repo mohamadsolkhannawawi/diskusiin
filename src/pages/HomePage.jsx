@@ -79,12 +79,12 @@ export default function HomePage() {
       {status === 'loading' && !hasLocalThreads && <Loading label="Memuat thread..." />}
 
       {status === 'failed' && !hasLocalThreads && (
-        <div style={{ textAlign: 'center' }}>
+        <div style={{textAlign: 'center'}}>
           <EmptyState title="Gagal memuat thread" description={error} />
           <button
             type="button"
             onClick={() => dispatch(asyncFetchThreads())}
-            style={{ marginTop: '1rem', padding: '0.5rem 1.5rem', borderRadius: '8px', border: 'none', background: '#2f6fed', color: '#fff', cursor: 'pointer', fontWeight: 500 }}
+            style={{marginTop: '1rem', padding: '0.5rem 1.5rem', borderRadius: '8px', border: 'none', background: '#2f6fed', color: '#fff', cursor: 'pointer', fontWeight: 500}}
           >
             Coba Lagi
           </button>
@@ -92,18 +92,18 @@ export default function HomePage() {
       )}
 
       {hasLocalThreads && status === 'loading' && (
-        <div style={{ padding: '0.75rem', background: 'rgba(47, 111, 237, 0.1)', color: '#2f6fed', textAlign: 'center', borderRadius: '12px', marginBottom: '1.5rem', fontSize: '0.9rem', fontWeight: 500 }}>
+        <div style={{padding: '0.75rem', background: 'rgba(47, 111, 237, 0.1)', color: '#2f6fed', textAlign: 'center', borderRadius: '12px', marginBottom: '1.5rem', fontSize: '0.9rem', fontWeight: 500}}>
           Memperbarui thread...
         </div>
       )}
 
       {hasLocalThreads && status === 'failed' && (
-        <div style={{ padding: '0.75rem', background: 'rgba(237, 71, 71, 0.1)', color: '#ed4747', textAlign: 'center', borderRadius: '12px', marginBottom: '1.5rem', fontSize: '0.9rem', fontWeight: 500, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem' }}>
+        <div style={{padding: '0.75rem', background: 'rgba(237, 71, 71, 0.1)', color: '#ed4747', textAlign: 'center', borderRadius: '12px', marginBottom: '1.5rem', fontSize: '0.9rem', fontWeight: 500, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem'}}>
           <span>Gagal memperbarui thread.</span>
           <button
             type="button"
             onClick={() => dispatch(asyncFetchThreads())}
-            style={{ padding: '0.25rem 0.75rem', borderRadius: '6px', border: '1px solid currentColor', background: 'transparent', color: 'inherit', cursor: 'pointer', fontSize: '0.85rem' }}
+            style={{padding: '0.25rem 0.75rem', borderRadius: '6px', border: '1px solid currentColor', background: 'transparent', color: 'inherit', cursor: 'pointer', fontSize: '0.85rem'}}
           >
             Coba lagi
           </button>

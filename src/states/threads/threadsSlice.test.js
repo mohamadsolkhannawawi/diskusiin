@@ -49,9 +49,9 @@ describe('threadsReducer', () => {
       clicked: 'up',
       userId: 'user-1',
     });
-    
+
     const nextState = threadsReducer(initialState, action);
-    
+
     expect(nextState.items[0].upVotesBy).toContain('user-1');
     expect(nextState.items[0].previousVoteSnapshot).toBeDefined();
   });
@@ -75,7 +75,7 @@ describe('threadsReducer', () => {
 
     const action = rollbackThreadVote({threadId: 'thread-1'});
     const nextState = threadsReducer(initialState, action);
-    
+
     expect(nextState.items[0].upVotesBy).not.toContain('user-1');
     expect(nextState.items[0].previousVoteSnapshot).toBeUndefined();
   });

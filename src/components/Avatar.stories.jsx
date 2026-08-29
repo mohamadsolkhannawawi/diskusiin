@@ -6,10 +6,10 @@ export default {
   title: 'Components/Avatar',
   component: Avatar,
   argTypes: {
-    name: { control: 'text' },
-    image: { control: 'text' },
-    size: { control: 'number' },
-    tail: { control: 'boolean' },
+    name: {control: 'text'},
+    image: {control: 'text'},
+    size: {control: 'number'},
+    tail: {control: 'boolean'},
   },
 };
 

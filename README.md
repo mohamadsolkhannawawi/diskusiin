@@ -3,6 +3,8 @@
 Aplikasi forum diskusi yang dibangun dengan **React** dan **Redux (Redux Toolkit)**,
 memanfaatkan [Dicoding Forum API](https://forum-api.dicoding.dev/v1).
 
+🚀 **Live Demo:** [https://diskusiin-mu.vercel.app/](https://diskusiin-mu.vercel.app/)
+
 ## Menjalankan proyek
 
 ```bash

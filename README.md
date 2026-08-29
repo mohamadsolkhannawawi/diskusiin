@@ -3,6 +3,8 @@
 Aplikasi forum diskusi yang dibangun dengan **React** dan **Redux (Redux Toolkit)**,
 memanfaatkan [Dicoding Forum API](https://forum-api.dicoding.dev/v1).
 
+🚀 **Live Demo:** [https://diskusiin-mu.vercel.app/](https://diskusiin-mu.vercel.app/)
+
 ## Menjalankan proyek
 
 ```bash
@@ -66,6 +68,17 @@ src/
   serta indikasi visual (warna) saat pengguna sudah vote
 - ✅ Halaman leaderboard (nama, avatar, skor)
 - ✅ Filter daftar thread berdasarkan kategori (murni di sisi front-end)
+
+## Kriteria yang dipenuhi (Final Submission)
+
+**Testing (Pengujian)**
+- ✅ **Unit Testing & Integration**: Menggunakan Vitest dan React Testing Library. Menguji reducer, thunk (async logic), dan komponen UI (minimal 3 komponen utama).
+- ✅ **E2E Testing**: Menggunakan Cypress untuk menguji alur Login aplikasi secara menyeluruh end-to-end.
+
+**CI/CD & Code Quality**
+- ✅ **Continuous Integration (CI)**: Terintegrasi dengan GitHub Actions untuk otomatis menjalankan ESLint, Vitest (Unit/Component test), dan Cypress (E2E) pada setiap PR dan push ke branch `main`.
+- ✅ **Continuous Deployment (CD)**: Terintegrasi dengan Vercel, sehingga pembaruan ke branch `main` akan langsung dideploy ke production.
+- ✅ **Storybook**: Menyertakan UI documentation untuk beberapa komponen terpisah dengan Storybook.
 
 ## Catatan implementasi vote
 

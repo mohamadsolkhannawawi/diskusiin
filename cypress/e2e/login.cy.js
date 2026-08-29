@@ -4,7 +4,7 @@ describe('Login spec', () => {
   });
 
   it('should display login page correctly', () => {
-    cy.contains('Masuk ke Akun Anda').should('be.visible');
+    cy.contains('Selamat datang kembali').should('be.visible');
     cy.get('input[type="email"]').should('be.visible');
     cy.get('input[type="password"]').should('be.visible');
     cy.get('button').contains('Masuk').should('be.visible');
@@ -26,11 +26,8 @@ describe('Login spec', () => {
 
     cy.wait('@loginRequest');
 
-    // We can check if an alert is shown or if error state is visible
-    // Since alert is a custom component, we assume it's visible on the screen
-    cy.on('window:alert', (str) => {
-      expect(str).to.equal('email or password is wrong');
-    });
+    // Verify that the custom alert toast shows the error message
+    cy.get('.alert-toast').should('be.visible').and('contain', 'Email atau kata sandi salah.');
   });
 
   it('should redirect to home page and show user info when login success', () => {
